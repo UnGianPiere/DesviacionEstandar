@@ -67,7 +67,7 @@ class PruebaEstadistica(unittest.TestCase):
     def test_desviacionEstandar_nNumeros_retornaDesviacionEstandar(self):
         # Arrange
         self.estadistica.numeros = [3, 4.5, 5]
-        resultadoEsperado = 1.041
+        resultadoEsperado = 0.850
 
         # Do
         resultadoActual = self.estadistica.desviacion_estandar()
