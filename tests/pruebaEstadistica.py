@@ -60,9 +60,16 @@ class PruebaEstadistica(unittest.TestCase):
             self.estadistica.desviacion_estandar()
 
     def test_desviacionEstandar_noNumero_retornaExcepcion(self):
-        self.estadistica.numeros = [3, 2, "a", "c"]
+        self.estadistica.numeros = [3, 2, "@", "c"]
         with self.assertRaises(ExceptionDatos):
-            self.estadistica.calcular_media()
+            self.estadistica.desviacion_estandar()
+
+    def test_desviacionEstandar_listaConValoresIncompletos_retornaExcepcion(self):
+
+        self.estadistica.numeros = [None, 3, 4, None, 5]
+
+        with self.assertRaises(ExceptionDatos):
+            self.estadistica.desviacion_estandar()
 
     def test_desviacionEstandar_nNumeros_retornaDesviacionEstandar(self):
         # Arrange
@@ -99,3 +106,4 @@ class PruebaEstadistica(unittest.TestCase):
 
             # Assert
             self.assertAlmostEqual(resultadoActual, resultadoEsperado, places=3)
+

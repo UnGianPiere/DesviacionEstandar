@@ -35,7 +35,7 @@ class Estadistica:
         suma = 0
         for valor in self.__numeros:
             suma += (valor - media) ** 2
-        radicando = suma / (len(self.__numeros) )
+        radicando = suma / (len(self.__numeros))  # cambio a Desviacion Estandar Poblacional
         return sqrt(radicando)
 
     def calcular_media(self):
